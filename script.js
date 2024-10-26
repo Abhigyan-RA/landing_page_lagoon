@@ -62,7 +62,6 @@ document
         popup.classList.remove("show");
       }, 1000);
     } else {
-      // First, send email to Google Apps Script (or your preferred method)
       fetch('https://script.google.com/macros/s/AKfycbyLkPuKm5MM62fLQPM5vlceixgYkkqOcpeq2eL0cisZaaGcYkFhy_Is9JCCaiYOMtJQ/exec', {
         method: 'POST',
         headers: {
@@ -74,7 +73,7 @@ document
       .then(data => {
         if (data.status === 'success') {
           
-          fetch('http://localhost:3000/send-email', {
+          fetch('https://inc-valencia-lagoon-ea19b1c3.koyeb.app/send-email', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -110,6 +109,9 @@ document
             console.error('Error!', error);
             popupText.innerHTML = "An error occurred while sending the email!";
             popup.classList.add("error-popup");
+            closeIcon.style.color = "red";
+            icon.innerHTML = `<img src="/Images/cross.png" alt="Cross" class="popup-icon-img">`;
+            icon.style.backgroundColor = "transparent";
             popup.classList.add("show");
             setTimeout(() => {
               popup.classList.remove("show");
