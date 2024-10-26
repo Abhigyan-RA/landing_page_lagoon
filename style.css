@@ -121,11 +121,20 @@ p {
   .content-1 h1 {
     /* line-height: 0.5 !important; */
   }
-  .content-2 h1,
+  .content-2 h1
+    {
+      font-size: 12px !important;
+      font-weight: 500;
+      line-height: 1 !important;
+      margin-top: 1rem !important;
+    }
+  }
   .content-3 h1 {
     font-size: 12px !important;
     font-weight: 500;
+    /* margin-right: 2rem; */
     line-height: 1 !important;
+    
     margin-top: 1rem !important;
   }
   .content-2 p {
@@ -139,6 +148,7 @@ p {
   }
   .content3-text {
     margin-top: 0px !important;
+    margin-left: 0% !important;
   }
 }
 .content-1 p {
@@ -841,6 +851,7 @@ p {
     width: 46% !important;
     height: auto !important;
     padding: 10px 4px 4px 4px !important;
+    
   }
 
   .card h1 {
@@ -914,6 +925,9 @@ p {
     font-size: 6px !important;
     bottom: 3.2rem !important;
     right: 1px !important;
+  }
+  .cardBox{
+    gap: 8px !important;
   }
 }
 
