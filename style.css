@@ -20,7 +20,7 @@ nav {
   color: #004838 !important;
 }
 
-@media (max-width: 455px) {
+@media (max-width: 837px) {
   .nav-link {
     line-height: 0.7rem;
     font-size: 10px !important;
@@ -73,7 +73,7 @@ h1 {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-@media (min-width: 555px) {
+@media (min-width: 837px) {
   h1 {
     font-size: 40px;
   }
@@ -117,7 +117,7 @@ p {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 837px) {
   .content-1 h1 {
     /* line-height: 0.5 !important; */
   }
@@ -192,7 +192,7 @@ p {
   transition: transform 0.1s ease-in-out, box-shadow 0.3s ease-in-out; 
 }
 
-@media (max-width :450px) {
+@media (max-width :1000px) {
   .home-image img{
     transition: none;
     transform: none;
@@ -230,7 +230,7 @@ p {
   /* background-color: red; */
 }
 
-@media (max-width: 760px) {
+@media (max-width: 837px) {
   .col-3 {
     margin-top: 17px;
   }
@@ -240,7 +240,7 @@ p {
   }
 }
 
-@media (min-width: 759px) {
+@media (min-width: 837px) {
   .content-3images img {
     height: 100px !important;
     max-width: 90%;
@@ -285,7 +285,7 @@ p {
   pointer-events: auto;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 837px) {
   .popup {
     padding: 1px 4px;
   }
@@ -391,35 +391,35 @@ p {
 }
 
 .ratingpic1 {
-  background-image: url(/Images/IMG-1.jpg);
+  background-image: url(./Images/IMG-1.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   left: 0;
 }
 .ratingpic2 {
-  background-image: url(/Images/IMG-2.jpg);
+  background-image: url(./Images/IMG-2.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   left: 50px;
 }
 .ratingpic3 {
-  background-image: url(/Images/IMG-3.jpg);
+  background-image: url(./Images/IMG-3.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   left: 100px;
 }
 .ratingpic4 {
-  background-image: url(/Images/IMG-4.jpg);
+  background-image: url(./Images/IMG-4.jpg);
   background-size: cover;
   background-position: ;
   background-repeat: no-repeat;
   left: 150px;
 }
 .ratingpic5 {
-  background-image: url(/Images/IMG-5.jpg);
+  background-image: url(./Images/IMG-5.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -436,7 +436,7 @@ p {
   margin-right: 10px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 837px) {
   .star-rating {
     justify-content: start;
     margin-left: 12px;
@@ -489,7 +489,7 @@ p {
   margin-bottom: 35px !important;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 837px) {
   .you-img {
     height: 15px !important;
   }
@@ -621,13 +621,13 @@ p {
   width: 200px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 837px) {
   .overlay-text2 {
     font-size: 1.1rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 837px) {
   .overlay-text2 {
     font-size: 1rem;
   }
@@ -651,19 +651,19 @@ p {
   width: 80%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 837px) {
   .overlay-text {
     font-size: 1.1rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 837px) {
   .overlay-text {
     font-size: 1rem;
   }
 }
 
-@media (min-width: 700px) and (max-wdith: 1030px) {
+@media (min-width: 837px) and (max-wdith: 1030px) {
   .main-4 {
     height: 51vh !important;
   }
@@ -676,7 +676,7 @@ p {
 .main-4 {
   height: 67vh;
   width: 100%;
-  background: url(/Images/greenbag.png);
+  background: url(./Images/greenbag.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -746,19 +746,19 @@ p {
   color: rgba(0, 0, 0, 0.1);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 837px) {
   .m4-content input {
     width: 342px;
   }
 }
 
-@media (min-width: 600px) and (max-width: 768px) {
+@media (min-width: 600px) and (max-width: 837px) {
   .main-4 {
     height: 47vh;
   }
 }
 
-@media (max-width: 579px) {
+@media (max-width: 837px) {
   .main-4 {
     height: 33vh;
   }
@@ -836,7 +836,7 @@ p {
   max-width: 90%;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 837px) {
   .card {
    border-radius: 8px !important ;
     width: 46% !important;
@@ -940,7 +940,7 @@ p {
   }
 }
 
-@media (max-width: 600px){
+@media (max-width: 837px){
   .home-image img{
     transition: none;
     opacity: 1;
@@ -1004,7 +1004,7 @@ p {
   z-index: 1;
 }
 
-@media (min-width: 760px) and (max-width: 1200px) {
+@media (min-width: 837px) and (max-width: 1200px) {
   .container {
     flex-direction: row !important;
   }
@@ -1085,7 +1085,7 @@ p {
   text-decoration: none;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 837px) {
   .m6-btn a {
     font-size: 8px !important;
   }
@@ -1128,7 +1128,7 @@ footer {
   text-decoration: none;
 }
 
-@media (max-width: 455px) {
+@media (max-width: 837px) {
   .footer-a {
     height: auto;
     font-size: 8px;
