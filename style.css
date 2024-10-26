@@ -668,7 +668,7 @@ p {
   }
 
   .content-2 h1 {
-    font-size: 38px;
+    font-size: 42px;
   }
 }
 
@@ -881,11 +881,14 @@ p {
   .card1,
   .card2 {
     width: 45% !important;
+    gap: 2px;
   }
+
   .card3,
   .card4,
   .card5 {
     width: 29% !important;
+    gap: 1px;
   }
 
   .card1 img {
