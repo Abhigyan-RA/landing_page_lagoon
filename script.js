@@ -38,9 +38,10 @@ document
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    popup.classList.remove("success-popup", "error-popup");
-    popup.classList.remove("show");
+  
+    popup.classList.remove("success-popup", "error-popup", "show");
 
+  
     if (emailInput.trim() === "") {
       popupText.innerHTML = "Please enter your email!";
       popup.classList.add("error-popup");
@@ -50,8 +51,12 @@ document
       popup.classList.add("show");
       setTimeout(() => {
         popup.classList.remove("show");
-      }, 1000);
-    } else if (!emailRegex.test(emailInput)) {
+      }, 2000);
+      return;
+    }
+
+    
+    if (!emailRegex.test(emailInput)) {
       popupText.innerHTML = "Please enter a correct email!";
       popup.classList.add("error-popup");
       closeIcon.style.color = "red";
@@ -60,87 +65,61 @@ document
       popup.classList.add("show");
       setTimeout(() => {
         popup.classList.remove("show");
-      }, 1000);
-    } else {
-      fetch('https://script.google.com/macros/s/AKfycbyLkPuKm5MM62fLQPM5vlceixgYkkqOcpeq2eL0cisZaaGcYkFhy_Is9JCCaiYOMtJQ/exec', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: `email=${encodeURIComponent(emailInput)}`
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.status === 'success') {
-          
-          fetch('https://inc-valencia-lagoon-ea19b1c3.koyeb.app/send-email', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email: emailInput })
-          })
-          .then(response => response.json())
-          .then(data => {
-            if (data.status === 'success') {
-              popupText.innerHTML = "Thank You for registering. A welcome email has been sent!";
-              popup.classList.add("success-popup");
-              closeIcon.style.color = "green";
-              icon.innerHTML = "&#10003;";
-              icon.style.backgroundColor = "rgba(0, 255, 0, 0.2)";
-              icon.style.color = "green";
-              popup.classList.add("show");
-              setTimeout(() => {
-                popup.classList.remove("show");
-              }, 1000);
-            } else {
-              popupText.innerHTML = "Something went wrong. Please try again!";
-              popup.classList.add("error-popup");
-              closeIcon.style.color = "red";
-              icon.innerHTML = `<img src="/Images/cross.png" alt="Cross" class="popup-icon-img">`;
-              icon.style.backgroundColor = "transparent";
-              popup.classList.add("show");
-              setTimeout(() => {
-                popup.classList.remove("show");
-              }, 1000);
-            }
-          })
-          .catch(error => {
-            console.error('Error!', error);
-            popupText.innerHTML = "An error occurred while sending the email!";
-            popup.classList.add("error-popup");
-            closeIcon.style.color = "red";
-            icon.innerHTML = `<img src="/Images/cross.png" alt="Cross" class="popup-icon-img">`;
-            icon.style.backgroundColor = "transparent";
-            popup.classList.add("show");
-            setTimeout(() => {
-              popup.classList.remove("show");
-            }, 1000);
-          });
-        } else {
-          popupText.innerHTML = "Something went wrong. Please try again!";
-          popup.classList.add("error-popup");
-          closeIcon.style.color = "red";
-          icon.innerHTML = `<img src="/Images/cross.png" alt="Cross" class="popup-icon-img">`;
-          icon.style.backgroundColor = "transparent";
-          popup.classList.add("show");
-          setTimeout(() => {
-            popup.classList.remove("show");
-          }, 1000);
-        }
-      })
-      .catch(error => {
-        console.error('Error!', error);
-        popupText.innerHTML = "An error occurred, please try again!";
-        popup.classList.add("error-popup");
-        popup.classList.add("show");
-        setTimeout(() => {
-          popup.classList.remove("show");
-        }, 1000);
-      });
+      }, 2000);
+      return;
     }
 
+   
+    popupText.innerHTML = "Thank you for registering. We are processing your request!";
+    popup.classList.add("success-popup");
+    closeIcon.style.color = "green";
+    icon.innerHTML = "&#10003;";
+    icon.style.backgroundColor = "rgba(0, 255, 0, 0.2)";
+    icon.style.color = "green";
+    popup.classList.add("show");
+    setTimeout(() => {
+      popup.classList.remove("show");
+    }, 3000); 
+
+    
+    fetch('https://script.google.com/macros/s/AKfycbyLkPuKm5MM62fLQPM5vlceixgYkkqOcpeq2eL0cisZaaGcYkFhy_Is9JCCaiYOMtJQ/exec', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `email=${encodeURIComponent(emailInput)}`
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        
+        fetch('https://inc-valencia-lagoon-ea19b1c3.koyeb.app/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email: emailInput })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.status !== 'success') {
+            console.error("Email sending failed.");
+          }
+        })
+        .catch(error => {
+          console.error('Error while sending email:', error);
+        });
+      } else {
+        console.error("Google Script failed.");
+      }
+    })
+    .catch(error => {
+      console.error('Error with the Google Script:', error);
+    });
+
+   
     closeIcon.addEventListener("click", function () {
       popup.classList.remove("show");
     });
   });
+
