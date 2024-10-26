@@ -34,13 +34,12 @@ document
     const popup = document.getElementById("thank-you-popup");
     const popupText = popup.querySelector(".popup-text");
     const closeIcon = popup.querySelector(".close-icon");
-    const icon = popup.querySelector(".icon"); 
+    const icon = popup.querySelector(".icon");
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    
     popup.classList.remove("success-popup", "error-popup");
-    popup.classList.remove("show"); 
+    popup.classList.remove("show");
 
     if (emailInput.trim() === "") {
       popupText.innerHTML = "Please enter your email!";
@@ -49,9 +48,9 @@ document
       icon.innerHTML = `<img src="/Images/cross.png" alt="Cross" class="popup-icon-img">`;
       icon.style.backgroundColor = "transparent";
       popup.classList.add("show");
-       setTimeout(() => {
-         popup.classList.remove("show");
-       }, 1000);
+      setTimeout(() => {
+        popup.classList.remove("show");
+      }, 1000);
     } else if (!emailRegex.test(emailInput)) {
       popupText.innerHTML = "Please enter a correct email!";
       popup.classList.add("error-popup");
@@ -63,6 +62,7 @@ document
         popup.classList.remove("show");
       }, 1000);
     } else {
+      // First, send email to Google Apps Script (or your preferred method)
       fetch('https://script.google.com/macros/s/AKfycbyLkPuKm5MM62fLQPM5vlceixgYkkqOcpeq2eL0cisZaaGcYkFhy_Is9JCCaiYOMtJQ/exec', {
         method: 'POST',
         headers: {
@@ -73,16 +73,48 @@ document
       .then(response => response.json())
       .then(data => {
         if (data.status === 'success') {
-          popupText.innerHTML = "Thank You for registering";
-          popup.classList.add("success-popup");
-          closeIcon.style.color = "green";
-          icon.innerHTML = "&#10003;";
-          icon.style.backgroundColor = "rgba(0, 255, 0, 0.2)";
-          icon.style.color = "green";
-          popup.classList.add("show");
-          setTimeout(() => {
-          popup.classList.remove("show");
-        }, 1000);
+          
+          fetch('http://localhost:3000/send-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: emailInput })
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.status === 'success') {
+              popupText.innerHTML = "Thank You for registering. A welcome email has been sent!";
+              popup.classList.add("success-popup");
+              closeIcon.style.color = "green";
+              icon.innerHTML = "&#10003;";
+              icon.style.backgroundColor = "rgba(0, 255, 0, 0.2)";
+              icon.style.color = "green";
+              popup.classList.add("show");
+              setTimeout(() => {
+                popup.classList.remove("show");
+              }, 1000);
+            } else {
+              popupText.innerHTML = "Something went wrong. Please try again!";
+              popup.classList.add("error-popup");
+              closeIcon.style.color = "red";
+              icon.innerHTML = `<img src="/Images/cross.png" alt="Cross" class="popup-icon-img">`;
+              icon.style.backgroundColor = "transparent";
+              popup.classList.add("show");
+              setTimeout(() => {
+                popup.classList.remove("show");
+              }, 1000);
+            }
+          })
+          .catch(error => {
+            console.error('Error!', error);
+            popupText.innerHTML = "An error occurred while sending the email!";
+            popup.classList.add("error-popup");
+            popup.classList.add("show");
+            setTimeout(() => {
+              popup.classList.remove("show");
+            }, 1000);
+          });
         } else {
           popupText.innerHTML = "Something went wrong. Please try again!";
           popup.classList.add("error-popup");
@@ -91,29 +123,22 @@ document
           icon.style.backgroundColor = "transparent";
           popup.classList.add("show");
           setTimeout(() => {
-          popup.classList.remove("show");
+            popup.classList.remove("show");
           }, 1000);
         }
-        
       })
       .catch(error => {
         console.error('Error!', error);
         popupText.innerHTML = "An error occurred, please try again!";
         popup.classList.add("error-popup");
-
-       
         popup.classList.add("show");
-
-        
         setTimeout(() => {
           popup.classList.remove("show");
         }, 1000);
       });
     }
 
-    
     closeIcon.addEventListener("click", function () {
       popup.classList.remove("show");
     });
   });
-
