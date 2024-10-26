@@ -139,6 +139,7 @@ p {
   }
   .content3-text {
     margin-top: 0px !important;
+    margin-left: 0% !important;
   }
 }
 .content-1 p {
@@ -170,14 +171,6 @@ p {
   max-width: 490px;
 }
 
-/* .home-image img {
-  margin-top: 17vh;
-  height: auto;
-  width: 90%;
-  max-width: fit-content;
-  margin-left: 4rem;
-  /* box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.2); */
-/* } */
 
 .home-image img {
   margin-top: 16vh;
@@ -196,7 +189,21 @@ p {
 }
 
 .bento-card {
-  transition: transform 0.1s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth scaling and shadow */
+  transition: transform 0.1s ease-in-out, box-shadow 0.3s ease-in-out; 
+}
+
+@media (max-width :450px) {
+  .home-image img{
+    transition: none;
+    transform: none;
+  }
+  .home-image img.visible{
+    transform: none;
+  }
+
+  .bento-card{
+    transition: none;
+  }
 }
 
 .bento-card:hover {
@@ -518,7 +525,7 @@ p {
     padding-top: 0vh !important;
   }
   h1 {
-    font-size: 15px !important;
+    font-size: 17px !important;
   }
   p {
     font-size: 8px !important;
@@ -831,20 +838,21 @@ p {
 
 @media (max-width: 450px) {
   .card {
+   border-radius: 8px !important ;
     width: 46% !important;
     height: auto !important;
     padding: 10px 4px 4px 4px !important;
   }
 
   .card h1 {
-    font-size: 10px !important;
+    font-size: 6px !important;
     margin-bottom: 1.5px !important;
   }
 
   .card p {
-    font-size: 8px;
+    font-size: 5px !important;
     margin: 3.5px 0px !important;
-    font-weight: 200 !important;
+    font-weight: 100 !important;
   }
 
   .card button {
@@ -874,11 +882,14 @@ p {
   .card1,
   .card2 {
     width: 45% !important;
+    gap: 2px;
   }
+
   .card3,
   .card4,
   .card5 {
     width: 29% !important;
+    gap: 1px;
   }
 
   .card1 img {
@@ -905,7 +916,23 @@ p {
     bottom: 3.2rem !important;
     right: 1px !important;
   }
+  .cardBox {
+    gap: 8px !important;
+  }
 }
+
+@media (max-width: 600px){
+  .home-image img{
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  .home-image .img-vissible{
+    transform: none;
+    opacity: 1;
+    }
+}
+
 
 .card {
   border-radius: 20px;
