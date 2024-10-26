@@ -921,6 +921,19 @@ p {
   }
 }
 
+@media (max-width: 600px){
+  .home-image img{
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  .home-image .img-vissible{
+    transform: none;
+    opacity: 1;
+    }
+}
+
+
 .card {
   border-radius: 20px;
   border: 1px solid #d3d5d8;
