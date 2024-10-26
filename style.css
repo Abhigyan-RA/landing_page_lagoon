@@ -895,10 +895,29 @@ p {
   .card1 img {
     width: 96%;
     margin-left: 12px !important;
+    margin-top: 10px !important;
+    margin-bottom: -4px !important;
+  }
+
+  .card3 img{
+    margin-bottom: -4px !important;
+   margin-left: 10px !important;
+  }
+
+  .card4 img{
+    margin-bottom: -4px !important;
+   margin-left: 10px !important;
+  }
+
+  .card5 img{
+    margin-bottom: -4px !important;
+   margin-left: 11px !important;
   }
 
   .card2 img {
     width: 100% !important;
+    margin-bottom: -4px !important;
+
   }
 
   /* .card4 img {
