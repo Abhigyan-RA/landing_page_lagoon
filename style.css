@@ -927,8 +927,7 @@ p {
     right: 1px !important;
   }
   .cardBox{
-    gap: 8px !important;
-  }
+    gap: 8px !important; }
 }
 
 .card {
