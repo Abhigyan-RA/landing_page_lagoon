@@ -656,8 +656,18 @@ p {
   }
 }
 
+@media (min-width: 700px) and (max-wdith: 1030px) {
+  .main-4 {
+    height: 51vh !important;
+  }
+
+  .content-2 h1 {
+    font-size: 38px;
+  }
+}
+
 .main-4 {
-  height: 81vh;
+  height: 67vh;
   width: 100%;
   background: url(/Images/greenbag.png);
   background-size: cover;
@@ -671,13 +681,13 @@ p {
 }
 
 .m4-main-img {
-  height: 12vh;
+  height: 11vh;
   max-width: 81%;
 }
 
 .m4-input {
   height: 3.981rem;
-  padding: 40px 9px;
+  padding: 40px 4px;
   background: linear-gradient(
     180deg,
     rgba(0, 187, 255, 0.1) 0%,
@@ -732,6 +742,12 @@ p {
 @media (min-width: 768px) {
   .m4-content input {
     width: 342px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .main-4 {
+    height: 47vh;
   }
 }
 
@@ -814,50 +830,42 @@ p {
 }
 
 @media (max-width: 450px) {
-  /* Style for card container */
   .card {
     width: 46% !important;
-    height: auto !important; /* Adjust height to auto to fit content */ /* Add space between the cards */
+    height: auto !important;
     padding: 10px 4px 4px 4px !important;
   }
 
-  /* Adjust Header Font Size */
   .card h1 {
-    font-size: 10px !important
-    ; /* Smaller font for header */
+    font-size: 10px !important;
     margin-bottom: 1.5px !important;
   }
 
-  /* Adjust Paragraph Font Size */
   .card p {
-    font-size: 8px; /* Smaller font for paragraph text */
+    font-size: 8px;
     margin: 3.5px 0px !important;
     font-weight: 200 !important;
   }
 
-  /* Button adjustments */
   .card button {
-    bottom: 10px; /* Move button closer to the bottom */
-    right: 10px; /* Adjust button position */
-    padding: 4px 6px; /* Smaller padding for button */
+    bottom: 10px;
+    right: 10px;
+    padding: 4px 6px;
   }
 
-  /* Image adjustments */
   .card img {
-    width: 100% !important; /* Adjust image width */
-    margin: 16px auto 1px auto !important; /* Center the image */
-    display: block; /* Ensure block display for proper alignment */
+    width: 100% !important;
+    margin: 16px 3px 1px auto !important;
+    display: block;
     height: auto;
   }
 
-  /* Special adjustment for card 3-5 for proper alignment */
   .card:nth-child(3),
   .card:nth-child(4),
   .card:nth-child(5) {
     width: 100%;
   }
 
-  /* Adjustments to handle the column layout on smaller screens */
   .card-wrapper {
     flex-direction: column;
     align-items: center;
@@ -882,9 +890,9 @@ p {
     width: 100% !important;
   }
 
-  .card4 img {
+  /* .card4 img {
     margin-bottom: -18px !important;
-  }
+  } */
   .card1 button img {
     width: 0% !important;
     margin-top: 0px !important;
@@ -896,6 +904,101 @@ p {
     font-size: 6px !important;
     bottom: 3.2rem !important;
     right: 1px !important;
+  }
+}
+
+.card {
+  border-radius: 20px;
+  border: 1px solid #d3d5d8;
+  background: linear-gradient(180deg, #f3fff3 0%, #00775d 100%);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.card h1 {
+  color: #041527;
+  font-weight: 700;
+  margin: 0;
+}
+
+.card p {
+  color: #041527;
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.card1,
+.card2 {
+  width: 48%;
+  height: 400px;
+}
+
+.card3,
+.card4,
+.card5 {
+  width: 30%;
+  height: 408px;
+}
+
+.card1 button {
+  position: absolute !important;
+  bottom: 12.2rem;
+  right: 15px;
+  background-color: #004838;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+@media (min-width: 760px) and (max-width: 1200px) {
+  .container {
+    flex-direction: row !important;
+  }
+
+  .card1,
+  .card2 {
+    width: 48% !important;
+  }
+
+  .card3,
+  .card4,
+  .card5 {
+    width: 30% !important;
+    margin-top: 17px !important;
+    height: 360px !important;
+  }
+  .card h1 {
+    font-size: 20px !important;
+  }
+  .card img {
+    max-width: 100% !important;
+    height: auto !important;
+    margin-top: 3.1rem !important;
+    margin-left: 2rem !important;
+    border-top-left-radius: 12px !important;
+  }
+
+  .card3 img {
+    margin-top: 2.1rem !important;
+  }
+
+  .card1 button img {
+    height: 20px;
+    width: 20px;
+    margin: 0px !important;
+    padding: 2px 3px !important;
+  }
+  .card1 button {
+    font-size: 11px;
+    bottom: 10.5rem;
   }
 }
 
