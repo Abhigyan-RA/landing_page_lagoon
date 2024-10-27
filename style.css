@@ -503,9 +503,14 @@ p {
     font-size: 12px;   /* Optional: Adjust font size */
   }
   .para{
-    font-size: 4px;
-    display: inline-block;
+    font-size: 7px !important;
+    display: block;
   width: 260px;
+  }
+  .p11{
+    font-size: 7px !important;
+    display: block;
+    width: 260px;
   }
 }
 
