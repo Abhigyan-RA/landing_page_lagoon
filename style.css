@@ -511,7 +511,7 @@ p {
 
 @media (max-width: 837px) {
   .you-img {
-    height: 15px !important;
+    height: 19px !important;
   }
 /* 
   .content3-text p {
@@ -520,7 +520,8 @@ p {
   /* }  */
 
   .hire{
-    border-radius: 1px;
+    /* font-size: 8px; */
+    border-radius: 7px !important;
   }
   .fontimg {
     height: 23px !important;
