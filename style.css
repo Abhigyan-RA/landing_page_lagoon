@@ -525,10 +525,10 @@ p {
     padding-top: 0vh !important;
   }
   h1 {
-    font-size: 17px !important;
+    font-size: 20px !important;
   }
   p {
-    font-size: 8px !important;
+    font-size: 10px !important;
     line-height: 1 !important;
     margin: 8px 0px !important;
   }
@@ -845,12 +845,12 @@ p {
   }
 
   .card h1 {
-    font-size: 6px !important;
+    font-size: 8px !important;
     margin-bottom: 1.5px !important;
   }
 
   .card p {
-    font-size: 5px !important;
+    font-size: 6px !important;
     margin: 3.5px 0px !important;
     font-weight: 100 !important;
   }
