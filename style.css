@@ -523,6 +523,13 @@ p {
   .you-img {
     height: 19px !important;
   }
+  .p0{
+    /* justify-content: center !important; */
+    align-items: center;
+    font-size: 7px !important;
+    display: inline-block;
+    width: 330px;
+  }
 /* 
   .content3-text p {
     max-width: 300px;  /* Narrower width on smaller screens */
