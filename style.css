@@ -526,9 +526,9 @@ p {
   .p0{
     /* justify-content: center !important; */
     align-items: center;
-    font-size: 7px !important;
+    font-size: 6px !important;
     display: inline-block;
-    width: 330px;
+    width: 385px;
   }
 /* 
   .content3-text p {
