@@ -526,7 +526,7 @@ p {
   .p0{
     /* justify-content: center !important; */
     align-items: center;
-    font-size: 6px !important;
+    font-size: 6.5px !important;
     display: inline-block;
     width: 385px;
   }
