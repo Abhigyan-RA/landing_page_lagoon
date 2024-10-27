@@ -512,6 +512,11 @@ p {
     display: block;
     width: 260px;
   }
+  .p0{
+    font-size: 7px !important;
+    display: block;
+    width: 330px;
+  }
 }
 
 @media (max-width: 837px) {
